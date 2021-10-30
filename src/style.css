@@ -8,6 +8,69 @@
   box-sizing: border-box;
 }
 
+@keyframes pupil {
+  40% {
+    transform: translateY(-1px);
+  }
+  70% {
+    transform: translateY(-1px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes wave1 {
+  0% {
+    transform: translateX(-40px) skewX(-5deg) rotate(0);
+    transform-origin: bottom;
+  }
+  33% {
+    transform: translateX(-40px) skewX(-5deg) rotate(6deg);
+    transform-origin: bottom;
+  }
+  66% {
+    transform: translateX(-40px) skewX(-5deg) rotate(0);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: translateX(-40px) skewX(-5deg) rotate(-6deg);
+    transform-origin: bottom;
+  }
+}
+@keyframes wave2 {
+  0% {
+    transform: translateX(0) skewX(-5deg) rotate(0);
+    transform-origin: bottom;
+  }
+  33% {
+    transform: translateX(0) skewX(-5deg) rotate(6deg);
+    transform-origin: bottom;
+  }
+  66% {
+    transform: translateX(0) skewX(-5deg) rotate(0);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: translateX(0) skewX(-5deg) rotate(-6deg);
+    transform-origin: bottom;
+  }
+}
+@keyframes wave3 {
+  0% {
+    transform: skewX(-5deg) rotate(0);
+  }
+  33% {
+    transform: skewX(-5deg) rotate(6deg);
+  }
+  66% {
+    transform: skewX(-5deg) rotate(0);
+  }
+  100% {
+    transform: skewX(-5deg) rotate(-6deg);
+  }
+}
+
 body {
   background-color: #e1e7d3;
 }
@@ -19,7 +82,6 @@ body {
   position: absolute;
   background: #a4978e;
 }
-
 .nameWrapper {
   position: relative;
 }
@@ -47,9 +109,11 @@ body {
 }
 .nameWrapper > .char1 {
   transform: translateX(-40px) skewX(-5deg);
+  animation: wave1 6s alternate linear infinite;
 }
 .nameWrapper > .char2 {
   transform: translateX(0) skewX(-5deg);
+  animation: wave2 6s alternate linear infinite;
 }
 .nameWrapper > .ro {
   position: absolute;
@@ -62,6 +126,7 @@ body {
   left: 50%;
   margin-left: 36px;
   transform: skewX(-5deg);
+  animation: wave3 6s alternate linear infinite;
 }
 .nameWrapper > .ro::after {
   content: "";
@@ -170,11 +235,11 @@ body {
   z-index: 6;
 }
 .ear {
-  width: 10px;
+  width: 12px;
   height: 25px;
-  top: -17px;
+  top: -10px;
   left: 50%;
-  margin-left: -5px;
+  margin-left: -6px;
 }
 .ear.left {
   transform: translateX(-36px) rotate(-6deg);
@@ -189,7 +254,7 @@ body {
   border: 15px solid;
   border-color: #a4978e transparent transparent;
   border-bottom: none;
-  left: -10px;
+  left: -8px;
   top: -2px;
 }
 .ear::after {
@@ -201,7 +266,7 @@ body {
   border-bottom: #a4978e 45px solid;
   border-left: transparent 15px solid;
   border-right: transparent 15px solid;
-  left: -10px;
+  left: -8px;
   top: -46px;
 }
 .eye {
@@ -226,6 +291,7 @@ body {
   margin-left: -5px;
   top: 8px;
   border-radius: 50%;
+  animation: pupil 5s ease 2s infinite;
 }
 .eye.left {
   transform: translateX(-38px);
