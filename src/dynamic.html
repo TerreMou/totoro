@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"
+  />
+  <title>龙猫的诞生过程</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+    #output2 {
+      display: none;
+    }
+    #output1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 30vw;
+      height: 100%;
+      overflow-y: auto;
+    }
+    #output1::-webkit-scrollbar {
+      display: none;
+    }
+    #html {
+      position: fixed;
+      bottom: 0;
+      left: 30vw;
+      width: 50vw;
+      height: 100%;
+    }
+    #buttons {
+      position: fixed;
+      z-index: 5;
+      right: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    #buttons > button {
+      margin-bottom: 10px;
+      padding: 4px 8px;
+    }
+    #buttons > button:hover {
+      cursor: pointer;
+    }
+    .wrap *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    .wrap *::before,
+    .wrap *::after {
+      box-sizing: border-box;
+    }
+    @keyframes pupil {
+      40% {
+        transform: translateY(-1px);
+      }
+      70% {
+        transform: translateY(-1px);
+      }
+      80% {
+        transform: translateY(-4px);
+      }
+    }
+    @keyframes wave1 {
+      0% {
+        transform: translateX(-40px) skewX(-5deg) rotate(0);
+        transform-origin: bottom;
+      }
+      33% {
+        transform: translateX(-40px) skewX(-5deg) rotate(6deg);
+        transform-origin: bottom;
+      }
+      66% {
+        transform: translateX(-40px) skewX(-5deg) rotate(0);
+        transform-origin: bottom;
+      }
+      100% {
+        transform: translateX(-40px) skewX(-5deg) rotate(-6deg);
+        transform-origin: bottom;
+      }
+    }
+    @keyframes wave2 {
+      0% {
+        transform: translateX(0) skewX(-5deg) rotate(0);
+        transform-origin: bottom;
+      }
+      33% {
+        transform: translateX(0) skewX(-5deg) rotate(6deg);
+        transform-origin: bottom;
+      }
+      66% {
+        transform: translateX(0) skewX(-5deg) rotate(0);
+        transform-origin: bottom;
+      }
+      100% {
+        transform: translateX(0) skewX(-5deg) rotate(-6deg);
+        transform-origin: bottom;
+      }
+    }
+    @keyframes wave3 {
+      0% {
+        transform: skewX(-5deg) rotate(0);
+      }
+      33% {
+        transform: skewX(-5deg) rotate(6deg);
+      }
+      66% {
+        transform: skewX(-5deg) rotate(0);
+      }
+      100% {
+        transform: skewX(-5deg) rotate(-6deg);
+      }
+    }
+
+    @media (max-width: 500px) {
+      #output1 {
+        width: 100%;
+        height: 50vh;
+      }
+      #html {
+        width: 100%;
+        height: 50vh;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="buttons">
+  <button id="btnPause">暂停</button>
+  <button id="btnPlay">播放</button>
+  <button id="btnSlow">慢速</button>
+  <button id="btnNormal">中速</button>
+  <button id="btnFast">快速</button>
+</div>
+<div id="output1"></div>
+<style id="output2"></style>
+<div id="html">
+  <div class="wrap">
+    <div class="nameWrapper">
+      <div class="to char1"></div>
+      <div class="to char2"></div>
+      <div class="ro"></div>
+    </div>
+    <div class="base head">
+      <div class="nose"></div>
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="base ear left"></div>
+      <div class="base ear right"></div>
+    </div>
+    <div class="base bodyMain"></div>
+    <div class="base bodyFillingUp"></div>
+    <div class="base bodyFillingMiddle"></div>
+    <div class="belly">
+      <div class="marking mark1"></div>
+      <div class="marking mark2"></div>
+      <div class="marking mark3"></div>
+      <div class="marking mark4"></div>
+      <div class="marking mark5"></div>
+      <div class="marking mark6"></div>
+      <div class="marking mark7"></div>
+    </div>
+    <div class="base upperArm left"></div>
+    <div class="base upperArm right"></div>
+    <div class="base foreArm left"></div>
+    <div class="base foreArm right"></div>
+    <div class="feet"></div>
+  </div>
+</div>
+<script src="dynamic.js"></script>
+</body>
+</html>
